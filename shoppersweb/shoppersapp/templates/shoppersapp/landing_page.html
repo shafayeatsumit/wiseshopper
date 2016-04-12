@@ -1,0 +1,87 @@
+{% extends 'shoppersapp/base.html' %}
+{% block content %}
+<div class="container-full">
+
+      <div class="row">
+
+        <div class="col-lg-12 text-center v-center">
+
+          <h1 style="font-family: 'Lobster';">Wise Shopper</h1>
+          <p class="lead"> An independent price comparison service website </p>
+
+          <br><br><br>
+
+          <form class="col-lg-12" type="get" action="/search">
+            <div class="input-group" style="width:340px;text-align:center;margin:0 auto;">
+            <input class="form-control input-lg"  placeholder="search your product here" type="text"  name="q">
+              <span class="input-group-btn"><button class="btn btn-lg btn-primary" type="submit">OK</button></span>
+            </div>
+          </form>
+        </div>
+
+      </div> <!-- /row -->
+
+  	  <div class="row">
+
+        <div class="col-lg-12 text-center v-center" style="font-size:39pt;">
+          <a href="{% url 'mobiles_page'  %}" data-toggle="tooltip" data-placement="bottom" title="mobile"><i class="fa fa-mobile"></i></a>
+          <a href="{% url 'motorcycles_page'  %}" data-toggle="tooltip" data-placement="bottom" title="motorcycle"><i class="fa fa-motorcycle"></i></a>
+          <a href="{% url 'laptops_page'  %}" data-toggle="tooltip" data-placement="bottom" title="laptop"><i class="fa fa-laptop"></i></a>
+          <a href="{% url 'cars_page'  %}" data-toggle="tooltip" data-placement="bottom" title="car"><i class="fa fa-car"></i></a>
+          <a href="{% url 'apartments_page'  %}" data-toggle="tooltip" data-placement="bottom" title="property"><i class="fa fa-home"></i></a>
+          <a href="{% url 'bicycles_page'  %}" data-toggle="tooltip" data-placement="bottom" title="bicycle"><i class="fa fa-bicycle"></i></a>
+        </div>
+
+      </div>
+
+  	<br><br><br><br><br>
+
+</div> <!-- /container full -->
+
+<div class="container">
+
+  	<hr>
+
+  	<div class="row">
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h3>Hello.</h3></div>
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
+            Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
+            dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
+            Aliquam in felis sit amet augue.
+            </div>
+          </div>
+        </div>
+      	<div class="col-md-4">
+        	<div class="panel panel-default">
+            <div class="panel-heading"><h3>Hello.</h3></div>
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
+            Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
+            dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
+            Aliquam in felis sit amet augue.
+            </div>
+          </div>
+        </div>
+      	<div class="col-md-4">
+        	<div class="panel panel-default">
+            <div class="panel-heading"><h3>Hello.</h3></div>
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
+            Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
+            dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
+            Aliquam in felis sit amet augue.
+            </div>
+          </div>
+        </div>
+    </div>
+
+	<div class="row">
+        <div class="col-lg-12">
+        <br><br>
+          <p class="pull-right"><a href="#">Template by Sumit</a> &nbsp; ©Copyright 2016 wiseshopper<sup>TM</sup> Brand.</p>
+        <br><br>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

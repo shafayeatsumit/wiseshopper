@@ -1,0 +1,96 @@
+{% extends 'shoppersapp/base.html' %}
+{% block content %}
+<!-- bicycles navbar starts -->
+<div class="navigation" >
+  <nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{% url 'landing_page'  %}" style="font-family: 'Lobster';">Wise Shopper</a>
+  </div>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav" style="font-size:25px;">
+          <li ><a href="{% url 'mobiles_page'  %}" data-toggle="tooltip" data-placement="bottom" title="mobile"><i class="fa fa-mobile"></i></a></a></li>
+          <li><a href="{% url 'motorcycles_page'  %}" data-toggle="tooltip" data-placement="bottom" title="motorcycle"><i class="fa fa-motorcycle"></i></a></li>
+          <li><a href="{% url 'laptops_page'  %}" data-toggle="tooltip" data-placement="bottom" title="laptop"><i class="fa fa-laptop"></i></a></li>
+          <li><a href="{% url 'cars_page'  %}" data-toggle="tooltip" data-placement="bottom" title="car"><i class="fa fa-car"></i></a></li>
+          <li><a href="{% url 'apartments_page'  %}" data-toggle="tooltip" data-placement="bottom" title="property"><i class="fa fa-home"></i></a></li>
+          <li><a href="{% url 'bicycles_page'  %}" data-toggle="tooltip" data-placement="bottom" title="bicycle"><i class="fa fa-bicycle"></i></a></li>
+      </ul>
+      <div class="col-sm-3 col-md-3 pull-right">
+        <form action="" class="navbar-form navbar-right" type="get" action="\search">
+          <div class="input-group">
+            <input type="text" name="q" placeholder="Search..." class="form-control" />
+          <div class="input-group-btn">
+         <button class="btn btn-default" type="submit" style="font-size:20px">
+           <span class="glyphicon glyphicon-search"></span>
+         </button>
+     </div>
+ </div>
+</form>
+      </div>
+  </div>
+</nav>
+
+</div>
+
+<!-- bicycles navbar end -->
+
+
+<div class="container" style="margin-top: 1cm;">
+{% for mobile in mobiles %}
+   <div class="well">
+      <div class="media">
+  		<a class="pull-left" href="#">
+    		<img class="media-object" width="80" height="80"  src="{{ mobile.image }}">
+  		</a>
+  		<div class="media-body">
+    		<h4 class="media-heading">{{ mobile.title }}</h4>
+        <a href="{{mobile.link}}" role="button" class="btn btn-success btn-large pull-right"> Details</a>
+
+                  <p>{{ mobile.description }}</p>
+          <ul class="list-inline list-unstyled">
+  			<li><span><i class="fa fa-calendar"></i> {{mobile.time}}, {{mobile.date}} </span></li>
+            <li>|</li>
+            <span><i class="fa fa-map-marker"></i> {{ mobile.location }}</span>
+            <li>|</li>
+            <li>
+               <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty">
+              </span>
+            </li>
+            <li>|</li>
+            <li>
+            <!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
+              <span><i class="fa fa-money"> {{mobile.price}}</i></span>
+            </li>
+			</ul>
+       </div>
+    </div>
+  </div>
+  {% endfor %}
+  <div class="pagination">
+    <span class="step-links">
+      {% for num in mobiles.paginator.page_range %}
+      {% ifequal num mobiles.number %}
+    <span class="current"><b>{{ num }}</b></span>
+      {% else %}
+      <a href="?page={{ num }}"> {{ num }}</a>
+      {% endifequal %}
+      {% endfor %}
+    </span>
+</div>
+
+</div>
+
+
+
+
+{% endblock %}
